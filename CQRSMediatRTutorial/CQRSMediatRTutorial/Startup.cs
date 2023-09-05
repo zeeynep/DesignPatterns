@@ -1,3 +1,4 @@
+using DAL;
 using DAL.CQRS.Handlers.CommandHandlers;
 using DAL.CQRS.Handlers.QueryHandlers;
 using Microsoft.AspNetCore.Builder;
@@ -9,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MediatR;
 
 namespace CQRSMediatRTutorial
 {
@@ -23,6 +25,7 @@ namespace CQRSMediatRTutorial
             services.AddTransient<GetAllProductQueryHandler>();
             services.AddTransient<GetByIdProductQueryHandler>();
 
+            services.AddMediatR(typeof(DbContext));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

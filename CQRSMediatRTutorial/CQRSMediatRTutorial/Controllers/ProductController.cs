@@ -4,8 +4,10 @@ using DAL.CQRS.Handlers.CommandHandlers;
 using DAL.CQRS.Handlers.QueryHandlers;
 using DAL.CQRS.Queries.Request;
 using DAL.CQRS.Queries.Response;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CQRSMediatRTutorial.Controllers
 {
@@ -13,41 +15,34 @@ namespace CQRSMediatRTutorial.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        CreateProductCommandHandler createProductCommandHandler;
-        DeleteProductCommandHandler deleteProductCommandHandler;
-        GetAllProductQueryHandler getAllProductQueryHandler;
-        GetByIdProductQueryHandler getByIdProductQueryHandler;
+        IMediator mediator;
 
-        public ProductController(CreateProductCommandHandler createProductCommandHandler, DeleteProductCommandHandler deleteProductCommandHandler,
-            GetAllProductQueryHandler getAllProductQueryHandler, GetByIdProductQueryHandler getByIdProductQueryHandler) 
+        public ProductController(IMediator mediator) 
         {
-            this.createProductCommandHandler = createProductCommandHandler;
-            this.deleteProductCommandHandler = deleteProductCommandHandler;
-            this.getAllProductQueryHandler = getAllProductQueryHandler;
-            this.getByIdProductQueryHandler = getByIdProductQueryHandler;
+            this.mediator = mediator;
         }
         [HttpGet]
-        public IActionResult Get([FromQuery] GetAllProductQueryRequest request)
+        public async Task<IActionResult> Get([FromQuery] GetAllProductQueryRequest request)
         {
-            List<GetAllProductQueryResponse> allProducts = getAllProductQueryHandler.GetAllProduct(request);
+            List<GetAllProductQueryResponse> allProducts = await mediator.Send(request);
             return Ok(allProducts);
         }
         [HttpGet("{id}")]
-        public IActionResult Get([FromQuery] GetByIdProductQueryRequest request)
+        public async Task<IActionResult> Get([FromQuery] GetByIdProductQueryRequest request)
         {
-            GetByIdProductQueryResponse product = getByIdProductQueryHandler.GetByIdProduct(request);
+            GetByIdProductQueryResponse product = await mediator.Send(request);
             return Ok(product);
         }
         [HttpPost]
-        public IActionResult Post([FromBody] CreateProductCommandRequest request) 
+        public async Task<IActionResult> Post([FromBody] CreateProductCommandRequest request) 
         {
-            CreateProductCommandResponse response = createProductCommandHandler.CreateProduct(request);
+            CreateProductCommandResponse response = await mediator.Send(request);
             return Ok(response);
         }
         [HttpDelete("{id}")]
-        public IActionResult Delete([FromQuery] DeleteProductCommandRequest request)
+        public async Task<IActionResult> Delete([FromQuery] DeleteProductCommandRequest request)
         {
-            DeleteProductCommandResponse response = deleteProductCommandHandler.DeleteProduct(request);
+            DeleteProductCommandResponse response = await mediator.Send(request);
             return Ok(response);
         }
 
