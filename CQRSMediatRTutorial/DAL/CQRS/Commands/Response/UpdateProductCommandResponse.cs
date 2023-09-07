@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.CQRS.Commands.Response
 {
-    public class CreateProductCommandResponse
+    public class UpdateProductCommandResponse
     {
-        public Guid ProductId { get; set; }
     }
 }

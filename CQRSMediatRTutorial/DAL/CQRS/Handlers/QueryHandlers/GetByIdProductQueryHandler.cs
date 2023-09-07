@@ -1,6 +1,7 @@
 ﻿using DAL.CQRS.Queries.Request;
 using DAL.CQRS.Queries.Response;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,10 @@ namespace DAL.CQRS.Handlers.QueryHandlers
         public async Task<GetByIdProductQueryResponse> Handle(GetByIdProductQueryRequest request, CancellationToken cancellationToken)
         {
             var product = DbContext.ProductList.FirstOrDefault(p => p.Id == request.Id);
+            if (product == null ) 
+            {
+                return null;
+            }
             return new GetByIdProductQueryResponse
             {
                 Id = product.Id,

@@ -25,7 +25,6 @@ namespace DAL.CQRS.Handlers.CommandHandlers
             });
             return new CreateProductCommandResponse
             {
-                IsSuccess = true,
                 ProductId = id
             };
         }

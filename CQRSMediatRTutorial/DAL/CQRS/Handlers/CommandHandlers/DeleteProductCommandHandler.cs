@@ -15,8 +15,9 @@ namespace DAL.CQRS.Handlers.CommandHandlers
         public async Task<DeleteProductCommandResponse> Handle(DeleteProductCommandRequest request, CancellationToken cancellationToken)
         {
             var deleteProduct = DbContext.ProductList.FirstOrDefault(p => p.Id == request.Id);
+            if (deleteProduct == null) { return null; }
             DbContext.ProductList.Remove(deleteProduct);
-            return new DeleteProductCommandResponse { IsSuccess = true };
+            return new DeleteProductCommandResponse { };
         }
     }
 }

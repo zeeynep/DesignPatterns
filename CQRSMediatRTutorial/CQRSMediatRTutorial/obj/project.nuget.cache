@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ovoeIez/9mBtUlHLXAR3BgR9zsF++xTt+yaGAKAwbo2/8Cs3GzlaMql2jTql6ChvP+s7+SXXlil+I3NWj5R+xA==",
+  "dgSpecHash": "Sz2vaGTUXfKYVYyD+GKRyLwgHJvCSPigTkATGYHPmRRstRf2jgrchYu9BAQVNqEDWaS/l8oVKBPtcU+c+FMdFQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\zeynep\\Desktop\\CQRSMediatRTutorial\\CQRSMediatRTutorial\\CQRSMediatRTutorial.csproj",
+  "projectFilePath": "C:\\Users\\zeynep\\Desktop\\DesignPatterns\\CQRSMediatRTutorial\\CQRSMediatRTutorial\\CQRSMediatRTutorial.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zeynep\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
     "C:\\Users\\zeynep\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",

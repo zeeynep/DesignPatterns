@@ -22,3 +22,15 @@ C:\Users\zeynep\Desktop\CQRSMediatRTutorial\DAL\obj\Debug\net5.0\DAL.dll
 C:\Users\zeynep\Desktop\CQRSMediatRTutorial\DAL\obj\Debug\net5.0\refint\DAL.dll
 C:\Users\zeynep\Desktop\CQRSMediatRTutorial\DAL\obj\Debug\net5.0\DAL.pdb
 C:\Users\zeynep\Desktop\CQRSMediatRTutorial\DAL\obj\Debug\net5.0\ref\DAL.dll
+C:\Users\zeynep\Desktop\DesignPatterns\CQRSMediatRTutorial\DAL\bin\Debug\net5.0\DAL.deps.json
+C:\Users\zeynep\Desktop\DesignPatterns\CQRSMediatRTutorial\DAL\bin\Debug\net5.0\DAL.dll
+C:\Users\zeynep\Desktop\DesignPatterns\CQRSMediatRTutorial\DAL\bin\Debug\net5.0\DAL.pdb
+C:\Users\zeynep\Desktop\DesignPatterns\CQRSMediatRTutorial\DAL\obj\Debug\net5.0\DAL.csproj.AssemblyReference.cache
+C:\Users\zeynep\Desktop\DesignPatterns\CQRSMediatRTutorial\DAL\obj\Debug\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zeynep\Desktop\DesignPatterns\CQRSMediatRTutorial\DAL\obj\Debug\net5.0\DAL.AssemblyInfoInputs.cache
+C:\Users\zeynep\Desktop\DesignPatterns\CQRSMediatRTutorial\DAL\obj\Debug\net5.0\DAL.AssemblyInfo.cs
+C:\Users\zeynep\Desktop\DesignPatterns\CQRSMediatRTutorial\DAL\obj\Debug\net5.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\zeynep\Desktop\DesignPatterns\CQRSMediatRTutorial\DAL\obj\Debug\net5.0\DAL.dll
+C:\Users\zeynep\Desktop\DesignPatterns\CQRSMediatRTutorial\DAL\obj\Debug\net5.0\refint\DAL.dll
+C:\Users\zeynep\Desktop\DesignPatterns\CQRSMediatRTutorial\DAL\obj\Debug\net5.0\DAL.pdb
+C:\Users\zeynep\Desktop\DesignPatterns\CQRSMediatRTutorial\DAL\obj\Debug\net5.0\ref\DAL.dll

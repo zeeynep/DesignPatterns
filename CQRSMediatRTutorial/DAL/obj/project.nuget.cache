@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jPeSlpPdJcgjk1/RZAW6rd+dVmD4eRaaPMnSNl5MGSOfJxy63DVwlM+oXeognPrTcaeEeuzh7qigo2sRbkIR1Q==",
+  "dgSpecHash": "fYCC1vyEfK2no4WaDA3EmNchnIHZJZHA1ajlTAglzI6Kf5KiiBQseDCh766JSiVRD/nHR5EyDArn0u01mGYYEA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\zeynep\\Desktop\\CQRSMediatRTutorial\\DAL\\DAL.csproj",
+  "projectFilePath": "C:\\Users\\zeynep\\Desktop\\DesignPatterns\\CQRSMediatRTutorial\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zeynep\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
     "C:\\Users\\zeynep\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
