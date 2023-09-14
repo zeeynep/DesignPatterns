@@ -32,6 +32,12 @@ namespace CQRSMediatRTutorial
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "CQRSMediatRTutorial", Version = "v1" });
             });
+
+            services.AddCors(options => options.AddPolicy(name: "ProductOrigins",
+                policy =>
+                {
+                    policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+                }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +50,8 @@ namespace CQRSMediatRTutorial
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CQRSMediatRTutorial v1"));
 
             }
+            app.UseCors("ProductOrigins");
+
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();

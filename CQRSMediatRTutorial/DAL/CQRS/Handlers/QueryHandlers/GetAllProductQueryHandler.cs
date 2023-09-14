@@ -21,6 +21,7 @@ namespace DAL.CQRS.Handlers.QueryHandlers
                 Price = product.Price,
                 Quantity = product.Quantity,
                 CreateTime = product.CreateTime,
+                Image = product.Image,
             }).ToList();
         }
     }

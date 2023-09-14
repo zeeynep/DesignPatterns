@@ -13,5 +13,6 @@ namespace DAL.Entities
         public int Quantity { get; set; }
         public decimal Price { get; set; }
         public DateTime CreateTime { get; set; }
+        public string Image { get; set; }
     }
 }

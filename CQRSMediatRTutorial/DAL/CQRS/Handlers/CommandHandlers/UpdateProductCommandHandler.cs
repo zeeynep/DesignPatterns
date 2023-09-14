@@ -26,6 +26,9 @@ namespace DAL.CQRS.Handlers.CommandHandlers
 
             return new UpdateProductCommandResponse
             {
+                Name = product.Name,
+                Price = product.Price,
+                Quantity = request.Quantity,
             };
         }
     }

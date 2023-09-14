@@ -31,10 +31,11 @@ namespace CQRSMediatRTutorial.Controllers
             List<GetAllProductQueryResponse> allProducts = await mediator.Send(request);
             return Ok(allProducts);
         }
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get([FromQuery] GetByIdProductQueryRequest request)
+        [HttpGet("{id:guid}")]
+        public async Task<IActionResult> Get([FromRoute] Guid id)
         {
-            GetByIdProductQueryResponse product = await mediator.Send(request);
+            GetByIdProductQueryRequest req = new() { Id = id };
+            GetByIdProductQueryResponse product = await mediator.Send(req);
             if (product == null) 
             {
                 return new ObjectResult(product) { StatusCode = StatusCodes.Status404NotFound };
@@ -45,12 +46,14 @@ namespace CQRSMediatRTutorial.Controllers
         public async Task<IActionResult> Post([FromBody] CreateProductCommandRequest request) 
         {
             CreateProductCommandResponse response = await mediator.Send(request);
-            return CreatedAtAction("Get", response.ProductId);
+            var actionName = nameof(Get);
+            return CreatedAtAction(actionName, response, null);
             //return new ObjectResult(response) { StatusCode = StatusCodes.Status201Created };
         }
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete([FromQuery] DeleteProductCommandRequest request)
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
+            DeleteProductCommandRequest request = new() { Id = id };
             DeleteProductCommandResponse response = await mediator.Send(request);
             if(response == null)
             {
@@ -58,7 +61,7 @@ namespace CQRSMediatRTutorial.Controllers
             }
             return new ObjectResult(response) { StatusCode = StatusCodes.Status204NoContent };
         }
-        [HttpPut("{id}")]
+        [HttpPut]
         public async Task<IActionResult> Put([FromQuery] UpdateProductCommandRequest request)
         {
             UpdateProductCommandResponse response = await mediator.Send(request);
@@ -66,7 +69,9 @@ namespace CQRSMediatRTutorial.Controllers
             {
                 return new ObjectResult(response) { StatusCode = StatusCodes.Status404NotFound };
             }
-            return new ObjectResult(response) { StatusCode = StatusCodes.Status204NoContent };
+            var actionName = nameof(Get);
+            return CreatedAtAction(actionName, response, null);
+            //return new ObjectResult(response) { StatusCode = StatusCodes.Status204NoContent };
         }
 
     }
